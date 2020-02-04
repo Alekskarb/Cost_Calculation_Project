@@ -6,8 +6,8 @@ import CalculationAdditionalWorks from "./CalculationAdditionalWorks";
 
 class Footer extends React.Component {
     render() {
-        return <div className={'wrapper'}>
-            <div className={'footer'}>
+        return <div className={'footer'}>
+            <div className={'container'}>
 
                 <CalculationAllWorks/>
                 <CalculationFinishingWorks/>

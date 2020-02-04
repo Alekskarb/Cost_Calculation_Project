@@ -6,8 +6,8 @@ import Navigation from "./components/Navbar/Navigation";
 
 class App extends React.Component {
     render() {
-        return <div className={'app-wrapp'}>
-            <div className={'wrapp'}>
+        return <div className={'app-wrapper'}>
+            <div className={'wrapper'}>
 
                 <Navigation/>
                 <Display/>

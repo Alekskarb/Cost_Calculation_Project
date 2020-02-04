@@ -3,13 +3,11 @@ import '../../App.css';
 
 class NavigationPanel extends React.Component {
     render() {
-        return <div className={'wrapper'}>
-            <div className={'navigation'}>
+        return <div className={'navigationText'}>
 
 
 
             </div>
-        </div>
     }
 }
 

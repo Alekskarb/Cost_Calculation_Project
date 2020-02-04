@@ -1,38 +1,50 @@
-.app {
-  text-align: center;
-  background-color: #282c34;
-  min-height: 600px;
-  width: 900px;
-  /*height: ;*/
+.app-wrapper {
+  display: flex;
+  background-color: black;
+  flex-direction: row;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.wrapper {
+  /*background-color: black;*/
+  height: 720px;
+  width: 860px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  /*font-size: calc(10px + 2vmin);*/
+  justify-content: space-between;
+  font-size: 20px;
   color: white;
   border: chartreuse 5px solid;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.wrapper {
-  background-color: black;
-  min-height: 90vh;
+.navigation {
+  background-color: blueviolet;
+  height: 120px;
   display: flex;
-  flex-direction: row;
+  width: 860px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  color: white;
 }
 
-.menu {
+.display {
   background-color: darkslateblue;
-  height: 300px;
+  height: 400px;
   display: flex;
-  width: 300px;
+  width: 860px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  background-color: darkgrey;
+  height: 200px;
+  display: flex;
+  width: 860px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -43,16 +55,6 @@
   width: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.display {
-  background-color: blueviolet;
-  height: 300px;
-  display: flex;
-  width: 300px;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }

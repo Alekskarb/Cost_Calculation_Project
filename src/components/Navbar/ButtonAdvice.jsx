@@ -1,16 +1,13 @@
 import React from 'react';
 import '../../App.css';
+import Advice from "./Advice";
 
-class ButtonAdvice extends React.Component {
-    render() {
-        return <div className={'wrapper'}>
-            <div className={'button'}>
+function ButtonAdvice() {
+    return <div className={'button'}>
 
-
-
-            </div>
-        </div>
-    }
+            <Advice/>
+        <button> Advice </button>
+    </div>
 }
 
 export default ButtonAdvice;

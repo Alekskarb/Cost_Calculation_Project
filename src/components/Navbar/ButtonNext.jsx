@@ -3,13 +3,11 @@ import '../../App.css';
 
 class ButtonNext extends React.Component {
     render() {
-        return <div className={'wrapper'}>
-            <div className={'button'}>
+        return <div className={'button'}>
 
-
+            <button> Next </button>
 
             </div>
-        </div>
     }
 }
 

@@ -3,12 +3,10 @@ import '../../App.css';
 
 class LevelPerfectDisplay extends React.Component {
     render() {
-        return <div className={'wrapper'}>
-            <div className={'levels'}>
+        return <div className={'levelPerfectDisplay'}>
 
 
 
-            </div>
         </div>
     }
 }

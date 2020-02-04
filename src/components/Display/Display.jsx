@@ -8,8 +8,7 @@ import CalculationDisplay from "./CalculationDisplay";
 
 class Display extends React.Component {
     render() {
-        return <div className={'wrapper'}>
-            <div className={'display'}>
+        return <div className={'display'}>
 
                 <LevelPerfectDisplay/>
                 <StartDataDisplay/>
@@ -18,7 +17,6 @@ class Display extends React.Component {
                 <CalculationDisplay/>
 
             </div>
-        </div>
     }
 }
 

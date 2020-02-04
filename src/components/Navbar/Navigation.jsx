@@ -1,13 +1,17 @@
 import React from 'react';
 import '../../App.css';
 import ButtonNext from "./ButtonNext";
+import ButtonAdvice from "./ButtonAdvice";
+import NavigationPanel from "./NavigationPanel";
 
 class Navigation extends React.Component {
     render() {
-        return <div className={'wrapper'}>
-            <div className={'navigation'}>
+        return <div className={'navigation'}>
+            <div className={'container'}>
 
-<ButtonNext/>
+                <ButtonNext/>
+                <ButtonAdvice/>
+                <NavigationPanel/>
 
             </div>
         </div>
