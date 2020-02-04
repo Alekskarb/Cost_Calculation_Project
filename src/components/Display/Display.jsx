@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import LevelPerfectDisplay from "./LevelPerfectDisplay";
 import StartDataDisplay from "./StartDataDisplay";
 import FinishingWorksDisplay from "./FinishingWorksDisplay";
 import AdditionalWorksDisplay from "./AdditionalWorksDisplay";
@@ -11,7 +10,6 @@ class Display extends React.Component {
     render() {
         return <div className={style.display}>
 
-                <LevelPerfectDisplay/>
                 <StartDataDisplay/>
                 <FinishingWorksDisplay/>
                 <AdditionalWorksDisplay/>

@@ -4,7 +4,7 @@ import style from '../Footer/Footer.module.css'
 class CalculationAdditionalWorks extends React.Component {
     render() {
         return <div className={style.calculationAdditionalWorks}>
-<div> calculationAdditionalWorks </div>
+<h3> calculationAdditionalWorks </h3>
             </div>
     }
 }
