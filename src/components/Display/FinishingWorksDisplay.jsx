@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import '../../App.css';
 
-class FinishingWorks extends React.Component {
+class FinishingWorksDisplay extends React.Component {
     render() {
         return <div className={'finishingWorks'}>
             <div>
@@ -13,4 +13,4 @@ class FinishingWorks extends React.Component {
     }
 }
 
-export default FinishingWorks;
+export default FinishingWorksDisplay;
