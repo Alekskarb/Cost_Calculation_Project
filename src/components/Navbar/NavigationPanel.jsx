@@ -1,13 +1,13 @@
 import React from 'react';
-import '../../App.css';
+import style from '../Navbar/Navigation.module.css'
 
 class NavigationPanel extends React.Component {
     render() {
-        return <div className={'navigationText'}>
+        return <div className={style.navigationText}>
 
+            step 1: add data
 
-
-            </div>
+        </div>
     }
 }
 

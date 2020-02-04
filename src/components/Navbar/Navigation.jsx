@@ -1,18 +1,18 @@
 import React from 'react';
-import '../../App.css';
 import ButtonNext from "./ButtonNext";
-import ButtonAdvice from "./ButtonAdvice";
+import ButtonBack from "./ButtonBack";
 import NavigationPanel from "./NavigationPanel";
+import style from '../Navbar/Navigation.module.css'
+import ButtonAdvice from "./ButtonAdvice";
 
 class Navigation extends React.Component {
     render() {
-        return <div className={'navigation'}>
-            <div className={'container'}>
-
+        return <div className={style.navigation}>
+            <div className={style.container}>
+                <ButtonBack/>
+                <NavigationPanel/>
                 <ButtonNext/>
                 <ButtonAdvice/>
-                <NavigationPanel/>
-
             </div>
         </div>
     }

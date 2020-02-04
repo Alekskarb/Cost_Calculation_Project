@@ -17,66 +17,7 @@
   justify-content: space-between;
   font-size: 20px;
   color: white;
-  border: chartreuse 5px solid;
-}
-
-.navigation {
-  background-color: blueviolet;
-  height: 120px;
-  display: flex;
-  width: 860px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.display {
-  background-color: darkslateblue;
-  height: 400px;
-  display: flex;
-  width: 860px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer {
-  background-color: darkgrey;
-  height: 200px;
-  display: flex;
-  width: 860px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  height: 200px;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.displayButton {
-  height: 90px;
-  width: 90px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.button {
-  height: 30px;
-  width: 60px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  border-radius: 15px;
+  border: darkgrey 5px solid;
 }
 
 .text {
@@ -101,16 +42,41 @@
   opacity: 0.5;
 }
 
-.displayError {
-  height: 80px;
-  width: 80px;
-  font-weight: bold;
-  color: red;
+.skillWrap {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24pt;
+  /*max-height: 1050px;*/
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
+.block {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  min-width: 320px;
+  font-size: 24px;
+  align-items: center;
+  margin: 10px;
+  justify-content: flex-end;
+  color: white;
+  /*background-color: lightyellow;*/
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+  min-height: 300px;
+  max-width: 300px;
+}
+
+.title {
+  font-size: 28px;
+  margin: 10px;
+  color: lightgreen;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {justify-content: center}
+}
 
 

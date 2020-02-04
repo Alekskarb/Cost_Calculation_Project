@@ -1,12 +1,10 @@
 import React from 'react';
-import '../../App.css';
+import style from '../Footer/Footer.module.css'
 
 class CalculationAdditionalWorks extends React.Component {
     render() {
-        return <div className={'calculationAdditionalWorks'}>
-
-
-
+        return <div className={style.calculationAdditionalWorks}>
+<div> calculationAdditionalWorks </div>
             </div>
     }
 }

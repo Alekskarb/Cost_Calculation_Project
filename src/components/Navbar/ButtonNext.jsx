@@ -1,12 +1,10 @@
 import React from 'react';
-import '../../App.css';
+import style from  '../Navbar/Navigation.module.css';
 
 class ButtonNext extends React.Component {
     render() {
-        return <div className={'button'}>
-
-            <button> Next </button>
-
+        return <div className={style.button}>
+            <button onClick={()=> alert('oi')}> NEXT </button>
             </div>
     }
 }

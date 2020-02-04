@@ -1,0 +1,48 @@
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+}
+.display {
+    background-color: white;
+    height: 560px;
+    display: flex;
+    width: 860px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: darkgrey 5px solid;
+}
+
+.container {
+    /*background-color: rgb(40%, 40%, 40%);*/
+    min-height: 80vh;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /*color: lightgreen;*/
+    /*border: 1px solid;*/
+}
+
+
+.displayButton {
+    height: 90px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.displayError {
+    height: 80px;
+    width: 80px;
+    font-weight: bold;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24pt;
+}

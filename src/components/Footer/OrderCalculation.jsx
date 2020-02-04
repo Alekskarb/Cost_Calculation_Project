@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../App.css';
+import style from '../Footer/Footer.module.css'
 
 class OrderCalculation extends React.Component {
     render() {
-        return <div className={'orderCalculation'}>
+        return <div className={style.orderCalculation}>
+            <form action="">
 
-
-
+            </form>
             </div>
     }
 }
