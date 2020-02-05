@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Cost_Calculation_Project/static/css/main.10a3f42a.chunk.css",
-    "main.js": "/Cost_Calculation_Project/static/js/main.121676b4.chunk.js",
-    "main.js.map": "/Cost_Calculation_Project/static/js/main.121676b4.chunk.js.map",
+    "main.js": "/Cost_Calculation_Project/static/js/main.7e98bdd3.chunk.js",
+    "main.js.map": "/Cost_Calculation_Project/static/js/main.7e98bdd3.chunk.js.map",
     "runtime-main.js": "/Cost_Calculation_Project/static/js/runtime-main.dde3b05d.js",
     "runtime-main.js.map": "/Cost_Calculation_Project/static/js/runtime-main.dde3b05d.js.map",
     "static/js/2.66d536f5.chunk.js": "/Cost_Calculation_Project/static/js/2.66d536f5.chunk.js",
     "static/js/2.66d536f5.chunk.js.map": "/Cost_Calculation_Project/static/js/2.66d536f5.chunk.js.map",
     "index.html": "/Cost_Calculation_Project/index.html",
-    "precache-manifest.08619699e2a176231615082a0c62b34f.js": "/Cost_Calculation_Project/precache-manifest.08619699e2a176231615082a0c62b34f.js",
+    "precache-manifest.e009d74f5670852e27a2caf598e17c50.js": "/Cost_Calculation_Project/precache-manifest.e009d74f5670852e27a2caf598e17c50.js",
     "service-worker.js": "/Cost_Calculation_Project/service-worker.js",
     "static/css/main.10a3f42a.chunk.css.map": "/Cost_Calculation_Project/static/css/main.10a3f42a.chunk.css.map",
     "static/js/2.66d536f5.chunk.js.LICENSE": "/Cost_Calculation_Project/static/js/2.66d536f5.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.dde3b05d.js",
     "static/js/2.66d536f5.chunk.js",
     "static/css/main.10a3f42a.chunk.css",
-    "static/js/main.121676b4.chunk.js"
+    "static/js/main.7e98bdd3.chunk.js"
   ]
 }
