@@ -11,6 +11,7 @@ class StartDataDisplay extends React.Component {
         levelPerfect: 0,
         nextStep: true,
         isShowCase: 1,
+        titleStep: 'add Data'
     }
 
     lengthValue =(e)=> { let value = +e.currentTarget.value;
@@ -54,6 +55,7 @@ class StartDataDisplay extends React.Component {
     {/*    <input type="radio" name='levelsPerfect' value={'VIP'} placeholder={'VIP'}/>*/}
     {/*</form>*/}
 </div>
+            <h3>Please, select a type of finishing & {this.state.titleStep} </h3>
             <div>
                 <input type="number" value={this.state.width} placeholder={'width room'}
                        onChange={this.widthValue} step={0.1}  min="1"
