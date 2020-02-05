@@ -1,16 +1,7 @@
-import React from 'react';
-import '../App.css';
+let initialState = {
 
-class AdditionalWorks extends React.Component {
-    render() {
-        return <div className={'additionalWorks'}>
-            <div>
-
-
-
-            </div>
-        </div>
-    }
 }
 
-export default AdditionalWorks;
+export const reducer = (state = initialState, action)=> {
+    return state
+}
