@@ -6,10 +6,8 @@ class NavigationPanel extends React.Component {
     render() {
         return <div className={style.navigationText}>
 
-            <NavLink to={'/step1'
-                // this.props.nextStep
-            } activeClassName={''}>
-                step 1: add data
+            <NavLink to={`/${this.props.stepNumber}`} activeClassName={''}>
+                {`${this.props.stepNumber}: ${this.props.stepName}`}
             </NavLink>
 
         </div>

@@ -10,7 +10,7 @@ class Navigation extends React.Component {
         return <div className={style.navigation}>
             <div className={style.container}>
                 <ButtonBack/>
-                <NavigationPanel/>
+                <NavigationPanel />
                 <ButtonNext/>
                 <ButtonAdvice/>
             </div>

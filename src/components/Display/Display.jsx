@@ -11,10 +11,14 @@ class Display extends React.Component {
     render() {
         return <div className={style.display}>
 
-        <Route path='/step1' component={StartDataDisplay}/>
-        <Route component={FinishingWorksDisplay}/>
-        <Route component={AdditionalWorksDisplay}/>
-        <Route component={CalculationDisplay}/>
+        <Route path={`/${this.props.stepNumber}`} component={StartDataDisplay} stepName={this.props.stepName}
+        />
+        <Route component={FinishingWorksDisplay}
+        />
+        <Route component={AdditionalWorksDisplay}
+        />
+        <Route component={CalculationDisplay}
+        />
 
             </div>
     }

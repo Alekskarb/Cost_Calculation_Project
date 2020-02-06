@@ -3,13 +3,16 @@ import style from '../Navbar/Navigation.module.css';
 
 class ButtonNext extends React.Component {
     state = {
-        nextStep: '',
-        name: this.nextStep,
-        isConditionsTrue: false
+        numberStep: '1',
+        stepNumber: `step#${this.numberStep}`,
+        stepName: 'Add Data',
+        navigateUrl: '/',
+        isConditionsTrue: false,
+
     }
 
     buttonNextStep = () => {
-        this.setState({nextStep: 'step#1'})
+        this.setState({numberStep: +this.numberStep + 1})
     }
 
     render() {

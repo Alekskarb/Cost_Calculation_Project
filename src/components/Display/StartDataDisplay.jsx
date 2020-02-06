@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../App.css';
+import style from '../Display/Display.module.css'
 
 class StartDataDisplay extends React.Component {
 
@@ -9,16 +9,12 @@ class StartDataDisplay extends React.Component {
         height: 2.4,
         floorage: '',
         levelPerfect: 0,
-        nextStep: true,
-        isShowCase: 1,
-        titleStep: 'add Data'
     }
 
     lengthValue =(e)=> { let value = +e.currentTarget.value;
         this.setState({length: value});
     // this.props.lengthValue(value)
     }
-
     widthValue =(e)=> {
         let value = +e.currentTarget.value;
         this.setState({width: value});
@@ -41,7 +37,9 @@ class StartDataDisplay extends React.Component {
     }
 
     render() {
-        return <div className={'startData'}>
+        return <>
+                <h3 className={style.text}>Please, select a type of finishing & {this.props.stepName} </h3>
+        <div className={'startData'}>
 <div>
     <select onChange={this.levelValue}>
         <option value={null}>Please, select</option>
@@ -49,13 +47,7 @@ class StartDataDisplay extends React.Component {
         <option value={2}>premium</option>
         <option value={3}>VIP</option>
     </select>
-    {/*<form action="">*/}
-    {/*    <input type="radio" name='levelsPerfect' value={'standard'} placeholder={'standard'}/>*/}
-    {/*    <input type="radio" name='levelsPerfect' value={'premium'} placeholder={'premium'}/>*/}
-    {/*    <input type="radio" name='levelsPerfect' value={'VIP'} placeholder={'VIP'}/>*/}
-    {/*</form>*/}
 </div>
-            <h3>Please, select a type of finishing & {this.state.titleStep} </h3>
             <div>
                 <input type="number" value={this.state.width} placeholder={'width room'}
                        onChange={this.widthValue} step={0.1}  min="1"
@@ -68,12 +60,10 @@ class StartDataDisplay extends React.Component {
                 />
                 <input type="number" value={this.state.length*this.state.width}
                        onChange={this.floorageValue} readOnly={true}
-
                        placeholder={'floor area'}/>
             </div>
-
-
         </div>
+        </>
     }
 }
 
