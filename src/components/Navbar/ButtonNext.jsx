@@ -3,23 +3,24 @@ import style from '../Navbar/Navigation.module.css';
 
 class ButtonNext extends React.Component {
     state = {
-        numberStep: '1',
-        stepNumber: `step#${this.numberStep}`,
+        numberStep: 1,
+        stepNumber: `step#1`,
         stepName: 'Add Data',
-        navigateUrl: '/',
-        isConditionsTrue: false,
+        isConditionsTrue: true,
+    };
 
-    }
-
-    buttonNextStep = () => {
-        this.setState({numberStep: +this.numberStep + 1})
-    }
+    buttonNextStep = () => {if (this.state.isConditionsTrue) {
+        this.setState({numberStep: this.state.numberStep + 1, stepNumber: `step#${this.state.numberStep + 1}`, stepName: 'Add finishings works'},
+            ()=>this.setState()
+        )}
+    this.props.numberNavigation(this.state.numberStep);
+    this.props.titleNavigation(this.state.stepName)
+    };
 
     render() {
         return <div className={style.button}>
             <button onClick={this.buttonNextStep}
-                    name={this.state.nextStep}
-                    disabled={this.props.isConditionsTrue}>
+                    disabled={!this.state.isConditionsTrue}>
                 NEXT
             </button>
         </div>

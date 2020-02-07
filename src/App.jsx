@@ -4,18 +4,16 @@ import Footer from "./components/Footer/Footer";
 import Display from "./components/Display/Display";
 import Navigation from "./components/Navbar/Navigation";
 
-class App extends React.Component {
-    render() {
-        return <div className={'app-wrapper'}>
-            <div className={'wrapper'}>
+function App(props) {
+    return <div className={'app-wrapper'}>
+        <div className={'wrapper'}>
 
-                <Navigation/>
-                <Display/>
-                <Footer/>
+            <Navigation titleNavigation={props.titleNavigation}/>
+            <Display/>
+            <Footer/>
 
-            </div>
         </div>
-    }
+    </div>
 }
 
 export default App;
