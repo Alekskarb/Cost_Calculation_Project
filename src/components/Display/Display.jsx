@@ -10,17 +10,12 @@ import {Route} from "react-router-dom";
 class Display extends React.Component {
     render() {
         return <div className={style.display}>
-
-        <Route path={`/${this.props.stepNumber}`} component={StartDataDisplay} stepName={this.props.stepName}
-        />
-        <Route component={FinishingWorksDisplay}
-        />
-        <Route component={AdditionalWorksDisplay}
-        />
-        <Route component={CalculationDisplay}
-        />
-
-            </div>
+            <Route path={`/${this.props.numberNavigation}`} component={StartDataDisplay}
+                   stepName={this.props.numberNavigation}/>
+            <Route component={FinishingWorksDisplay}/>
+            <Route component={AdditionalWorksDisplay}/>
+            <Route component={CalculationDisplay}/>
+        </div>
     }
 }
 

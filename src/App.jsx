@@ -4,16 +4,19 @@ import Footer from "./components/Footer/Footer";
 import Display from "./components/Display/Display";
 import Navigation from "./components/Navbar/Navigation";
 
-function App(props) {
-    return <div className={'app-wrapper'}>
-        <div className={'wrapper'}>
+class App extends React.Component {
 
-            <Navigation titleNavigation={props.titleNavigation}/>
-            <Display/>
-            <Footer/>
+    render() {
+        return <div className={'app-wrapper'}>
+            <div className={'wrapper'}>
 
+                <Navigation numberStep={this.props.numberStep} stepName={this.props.stepName}/>
+                <Display/>
+                <Footer/>
+
+            </div>
         </div>
-    </div>
+    }
 }
 
 export default App;
