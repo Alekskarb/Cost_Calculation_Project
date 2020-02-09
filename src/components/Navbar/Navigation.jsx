@@ -7,30 +7,29 @@ class Navigation extends React.Component {
 
     state = {
         numberStep: 1,
-        stepNumber: '',
-        stepName: '',
+        stepNumber: 'step#1',
+        stepName: 'Add Your Room Data',
         isConditionsTrue: true,
     };
 
     buttonNext = () => {
-        // debugger
-        if (this.state.isConditionsTrue && this.state.numberStep <= 4) {
+        if (this.state.isConditionsTrue && this.state.numberStep <= 3) {
             this.setState({
-                numberStep: this.state.numberStep + 1,
+                    numberStep: this.state.numberStep + 1,
+                }, () => {
+                    this.pressButton(this.state.numberStep)
                 }
             )
         }
-        this.pressButton(this.state.numberStep)
+
     };
 
     buttonBack = () => {
-        if (this.state.isConditionsTrue && this.state.numberStep > 0) {
-            // debugger
+        if (this.state.isConditionsTrue && this.state.numberStep > 1) {
             this.setState({
-                    numberStep: this.state.numberStep - 1,
-                })
+                numberStep: this.state.numberStep - 1,
+            },()=> this.pressButton(this.state.numberStep))
         }
-        this.pressButton(this.state.numberStep)
     };
 
     pressButton = (number) => {
@@ -69,9 +68,7 @@ class Navigation extends React.Component {
                 );
                 break;
             default:
-                this.setState({
-                    numberStep: 1
-                })
+                return this.state;
         }
     };
 
