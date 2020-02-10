@@ -3,13 +3,19 @@ import style from '../Footer/Footer.module.css'
 import OrderCalculation from "./OrderCalculation";
 
 class CalculationAllWorks extends React.Component {
+    state = {
+        isOrderTake: false
+    }
     render() {
         return <div className={style.clickCalc}>
-            <div  className={style.title}> Calculation <br/>All Works </div>
-                <OrderCalculation/>
+            {!this.state.isOrderTake &&
+                <div className={style.title}>
+                    Calculation <br/>All Works
+                </div>}
 
-            </div>
+            {this.state.isOrderTake && <OrderCalculation/>
+            }
+        </div>
     }
 }
-
 export default CalculationAllWorks;

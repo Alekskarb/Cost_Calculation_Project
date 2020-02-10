@@ -1,5 +1,6 @@
 import React from 'react';
 import style from '../Display/Display.module.css'
+import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
 
 class StartDataDisplay extends React.Component {
 
@@ -64,6 +65,12 @@ class StartDataDisplay extends React.Component {
             </div>
         </div>
         </>
+    }
+}
+
+mapStateToProps =(state)=>{
+    return  {
+        stepName: this.state.stepName,
     }
 }
 

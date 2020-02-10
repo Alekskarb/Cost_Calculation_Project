@@ -3,9 +3,9 @@ import style from '../Footer/Footer.module.css'
 
 class OrderCalculation extends React.Component {
     render() {
-        return <div className={style.orderCalculation}>
+        return <div className={style.title}>
             <form action="">
-
+Take Offer
             </form>
             </div>
     }
