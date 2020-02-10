@@ -3,8 +3,8 @@ import style from '../Footer/Footer.module.css'
 
 class CalculationFinishingWorks extends React.Component {
     render() {
-        return <div className={style.calculationFinishingWorks}>
-            <h3> CalculationFinishingWorks </h3>
+        return <div className={style.clickCalc}>
+            <div  className={style.title}> Calculation Finishing Works </div>
             </div>
     }
 }

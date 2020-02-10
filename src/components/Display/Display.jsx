@@ -7,16 +7,14 @@ import CalculationDisplay from "./CalculationDisplay";
 import style from '../Display/Display.module.css'
 import {Route} from "react-router-dom";
 
-class Display extends React.Component {
-    render() {
-        return <div className={style.display}>
-            <Route path={`/${this.props.numberNavigation}`} component={StartDataDisplay}
-                   stepName={this.props.numberNavigation}/>
-            <Route component={FinishingWorksDisplay}/>
-            <Route component={AdditionalWorksDisplay}/>
-            <Route component={CalculationDisplay}/>
-        </div>
-    }
+function Display(props) {
+    return <div className={style.display}>
+        <Route path={`/${props.numberNavigation}`} component={StartDataDisplay}
+               stepName={props.numberNavigation}/>
+        <Route component={FinishingWorksDisplay}/>
+        <Route component={AdditionalWorksDisplay}/>
+        <Route component={CalculationDisplay}/>
+    </div>
 }
 
 export default Display;

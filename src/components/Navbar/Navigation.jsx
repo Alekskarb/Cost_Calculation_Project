@@ -21,7 +21,6 @@ class Navigation extends React.Component {
                 }
             )
         }
-
     };
 
     buttonBack = () => {
@@ -48,7 +47,6 @@ class Navigation extends React.Component {
                         stepNumber: `step#${number}`,
                         stepName: 'Add finishings works'
                     },
-                    // () => {callbackStep(this.state.numberStep)}
                 );
                 break;
             case 3:

@@ -1,8 +1,8 @@
 let initialState = {
-        length: 1,
-        width: 1,
-        height: 2.5,
-        floorage: 1
+    numberStep: 1,
+    stepNumber: 'step#1',
+    stepName: 'Add Your Room Data',
+    isConditionsTrue: true,
 };
 
 export const reducer = (state = initialState, action)=> {

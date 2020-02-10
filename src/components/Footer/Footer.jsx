@@ -10,8 +10,8 @@ class Footer extends React.Component {
         return <div className={style.footer}>
             <div className={style.container}>
 
-                <CalculationAllWorks/>
                 <CalculationFinishingWorks/>
+                <CalculationAllWorks/>
                 <CalculationAdditionalWorks/>
 
             </div>
