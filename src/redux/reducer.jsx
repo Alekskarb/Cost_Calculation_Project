@@ -1,3 +1,5 @@
+const SET_LENGTH_VALUE = 'SET_LENGTH_VALUE';
+
 let initialState = {
     numberStep: 1,
     stepNumber: 'step#1',
@@ -10,9 +12,13 @@ let initialState = {
     levelPerfect: 0,
 };
 
-export const reducer = (state = initialState, action)=> {
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        // case STEP1:
+        case SET_LENGTH_VALUE:
+            return {...state, length: action.value}
     }
     return state
 };
+
+export const lengthValueAC = (value) => ({type: SET_LENGTH_VALUE, value});
+

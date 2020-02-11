@@ -9,7 +9,7 @@ import {Route} from "react-router-dom";
 
 function Display(props) {
     return <div className={style.display}>
-        <Route path={`/${props.numberNavigation}`} component={StartDataDisplay}
+        <Route path='step#1' component={StartDataDisplay}
                stepName={props.numberNavigation}/>
         <Route component={FinishingWorksDisplay}/>
         <Route component={AdditionalWorksDisplay}/>
