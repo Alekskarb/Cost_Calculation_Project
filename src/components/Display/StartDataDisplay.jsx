@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../Display/Display.module.css'
-import mapStateToProps from "react-redux/lib/connect/mapStateToProps";
+import {connect} from "react-redux";
 
 class StartDataDisplay extends React.Component {
 
@@ -14,27 +14,27 @@ class StartDataDisplay extends React.Component {
 
     lengthValue =(e)=> { let value = +e.currentTarget.value;
         this.setState({length: value});
-    // this.props.lengthValue(value)
+    this.props.lengthValue(value)
     }
     widthValue =(e)=> {
         let value = +e.currentTarget.value;
         this.setState({width: value});
-    // this.props.widthValue(value)
+    this.props.widthValue(value)
     }
     floorageValue =(e)=> {
         let square = +e.currentTarget.value;
         this.setState({width: square});
-    // this.props.widthValue(value)
+    this.props.widthValue(square)
     }
     heightValue =(e)=> {
         let value = +e.currentTarget.value;
         this.setState({height: value});
-    // this.props.heightValue(  value)
+    this.props.heightValue(value)
     }
     levelValue =(e)=> {
         let level = +e.currentTarget.value;
         this.setState({levelPerfect: level});
-    // this.props.levelValue(level)
+    this.props.levelValue(level)
     }
 
     render() {
@@ -68,10 +68,16 @@ class StartDataDisplay extends React.Component {
     }
 }
 
-mapStateToProps =(state)=>{
+const mapStateToProps =(state)=>{
     return  {
         stepName: this.state.stepName,
     }
+};
+const mapDispatchToProps=(dispatch)=> {
+    return {
+
+    }
 }
 
-export default StartDataDisplay;
+export const StartDataDisplayContainer = connect(mapStateToProps, mapDispatchToProps)(StartDataDisplay);
+export default StartDataDisplayContainer;
