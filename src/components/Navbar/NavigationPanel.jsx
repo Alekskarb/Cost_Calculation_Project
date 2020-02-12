@@ -2,15 +2,22 @@ import React from 'react';
 import style from '../Navbar/Navigation.module.css'
 import {NavLink} from "react-router-dom";
 
-function NavigationPanel(props) {
+class NavigationPanel extends React.Component {
+
+    componentDidMount() {
+        return this.props.state
+    }
+
+    render() {
 debugger
-    return <div className={style.navigationText}>
+        return <div className={`${style.item} ${style.active}`}>
 
-        <NavLink to={`/${props.stepNumber}`} activeClassName={''}>
-            {`step ${props.numberStep}: ${props.steps}`}
-        </NavLink>
+            <NavLink to={`/${this.props.stepNumber}`} activeClassName={style.active} >
+                {`step ${this.props.numberStep}: ${this.props.steps}`}
+            </NavLink>
 
-    </div>
+        </div>
+    }
 }
 
 export default NavigationPanel;

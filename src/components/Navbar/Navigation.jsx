@@ -32,48 +32,6 @@ class Navigation extends React.Component {
         }
     };
 
-    // pressButton = (number) => {
-    //
-    //     switch (number) {
-    //         case 1:
-    //             this.setState({
-    //                     numberStep: number,
-    //                     stepNumber: `step#${number}`,
-    //                     stepName: 'Add Your Room Data'
-    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
-    //             );
-    //             break;
-    //         case 2:
-    //
-    //             this.setState({
-    //                     numberStep: number,
-    //                     stepNumber: `step#${number}`,
-    //                     stepName: 'Add finishings works'
-    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
-    //             );
-    //             break;
-    //         case 3:
-    //             debugger
-    //             this.setState({
-    //                     numberStep: number,
-    //                     stepNumber: `step#${number}`,
-    //                     stepName: 'Select additional works'
-    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
-    //             );
-    //             break;
-    //         case 4:
-    //             this.setState({
-    //                     numberStep: number,
-    //                     stepNumber: `step#${number}`,
-    //                     stepName: 'The cost of work'
-    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
-    //             );
-    //             break;
-    //         default:
-    //             return this.state;
-    //     }
-    // };
-
     componentDidMount() {
         return this.props.state
     };

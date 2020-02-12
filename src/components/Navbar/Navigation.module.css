@@ -63,6 +63,24 @@ display: flex;
     margin: 10px;
     color: lightgreen;
 }
+.item {
+    color: gray;
+    text-decoration: gold;
+    height: 60px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: maroon;
+    border: chocolate 2px solid;
+    text-underline-style: none;
+}
+
+.item .active {
+    color: lightyellow;
+}
 
 @media screen and (max-width: 1200px) {
     .container {justify-content: center}

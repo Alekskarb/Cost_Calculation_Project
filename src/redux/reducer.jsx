@@ -10,7 +10,7 @@ let initialState = {
         'Select additional works',
         'The cost of work',
     ],
-    steps: '',
+    steps: 'Add Your Room Data',
     isConditionsTrue: true,
     length: 1,
     width: 1,
@@ -23,11 +23,15 @@ export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_LENGTH_VALUE:
             return {
-                ...state, length: action.value};
-        case SET_NAVIGATION: debugger
+                ...state, length: action.value
+            };
+        case SET_NAVIGATION:
             return {
                 ...state, numberStep: action.num, stepNumber: `step#${action.num}`,
-                steps: state.stepName.find((el,i, stepName)=>el[i]===el[action.num])}
+                steps: state.stepName[action.num].toString(
+                    // find(el,i, stepName)=> el[i] === el[action.num]
+                )
+            }
     }
     return state
 };
