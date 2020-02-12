@@ -9,17 +9,15 @@ class Navigation extends React.Component {
 
     state = {
         numberStep: 1,
-        stepNumber: '',
-        stepName: 'Add Your Room Data',
         isConditionsTrue: true,
     };
 
     buttonNext = () => {
         if (this.state.isConditionsTrue && this.props.numberStep <= 3) {
             this.setState({
-                    numberStep: this.props.numberStep + 1,
+                    numberStep: this.state.numberStep + 1,
                 }, () => {
-                    this.pressButton(this.props.numberStep)
+                    this.props.pressButton(this.state.numberStep)
                 }
             )
         }
@@ -30,7 +28,7 @@ class Navigation extends React.Component {
         if (this.state.isConditionsTrue && this.state.numberStep > 1) {
             this.setState({
                 numberStep: this.state.numberStep - 1,
-            },()=> this.pressButton(this.state.numberStep))
+            },()=> this.props.pressButton(this.state.numberStep))
         }
     };
 
@@ -85,8 +83,11 @@ class Navigation extends React.Component {
             <div className={style.container}>
 
                 <Button title={'Back'} setData={this.buttonBack}/>
-                <NavigationPanel numberStep={this.state.numberStep}
-                                 stepName={this.state.stepName}/>
+                <NavigationPanel
+                    numberStep={this.props.numberStep}
+                    stepNumber={this.props.stepNumber}
+                    steps={this.props.steps}
+                />
                 <Button title={'Next'} setData={this.buttonNext}/>
 
                 {/*<ButtonAdvice/>*/}
@@ -100,13 +101,13 @@ const mapStateToProps=(state)=> {
     return {
         numberStep: state.numberStep,
         stepNumber: state.stepNumber,
-        stepName: state.stepName,
+        steps: state.steps,
     }
 };
 const mapDispatchToProps =(dispatch)=> {
     return {
-        pressButton: (num, step, name)=> {
-            dispatch(pressButtonAC(num, step, name))
+        pressButton: (num)=> {
+            dispatch(pressButtonAC(num))
         }
     }
 }

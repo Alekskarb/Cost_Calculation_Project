@@ -14,9 +14,7 @@ class App extends React.Component {
         return <div className={'app-wrapper'}>
             <div className={'wrapper'}>
 
-                <Navigation
-                    // numberStep={this.props.numberStep} stepName={this.props.stepName}
-                />
+                <Navigation/>
                 <Display/>
                 <Footer/>
 

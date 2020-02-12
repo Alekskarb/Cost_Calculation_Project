@@ -3,18 +3,14 @@ const SET_NAVIGATION = 'SET_NAVIGATION';
 
 let initialState = {
     numberStep: 1,
-    stepNumber: [
-        'step#1',
-        'step#2',
-        'step#3',
-        'step#4',
-    ],
-    stepName: [
+    stepNumber: 'step#1',
+    stepName: ['',
         'Add Your Room Data',
         'Add finishings works',
         'Select additional works',
         'The cost of work',
     ],
+    steps: '',
     isConditionsTrue: true,
     length: 1,
     width: 1,
@@ -27,10 +23,11 @@ export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_LENGTH_VALUE:
             return {
-                ...state, length: action.value}
-        case SET_NAVIGATION:
+                ...state, length: action.value};
+        case SET_NAVIGATION: debugger
             return {
-                ...state, numberStep: action.num, stepNumber: action.step, stepName: action.name}
+                ...state, numberStep: action.num, stepNumber: `step#${action.num}`,
+                steps: state.stepName.find((el,i, stepName)=>el[i]===el[action.num])}
     }
     return state
 };
