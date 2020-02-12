@@ -6,11 +6,17 @@ import Navigation from "./components/Navbar/Navigation";
 
 class App extends React.Component {
 
+    componentDidMount() {
+        return this.state
+    };
+
     render() {
         return <div className={'app-wrapper'}>
             <div className={'wrapper'}>
 
-                <Navigation numberStep={this.props.numberStep} stepName={this.props.stepName}/>
+                <Navigation
+                    // numberStep={this.props.numberStep} stepName={this.props.stepName}
+                />
                 <Display/>
                 <Footer/>
 

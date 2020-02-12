@@ -5,7 +5,7 @@ import OrderCalculation from "./OrderCalculation";
 class CalculationAllWorks extends React.Component {
     state = {
         isOrderTake: false
-    }
+    };
     render() {
         return <div className={style.clickCalc}>
             {!this.state.isOrderTake &&

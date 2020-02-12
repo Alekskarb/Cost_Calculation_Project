@@ -6,12 +6,10 @@ import {lengthValueAC} from "../../redux/reducer";
 class StartDataDisplay extends React.Component {
 
     state= {
-        length: 1,
-        width: 1,
-        height: 2.4,
-        floorage: '',
-        levelPerfect: 0,
-    }
+       isDataWright: true
+    };
+
+
 
     lengthValue =(e)=> { let value = +e.currentTarget.value;
         this.setState({length: value});
@@ -71,12 +69,12 @@ class StartDataDisplay extends React.Component {
 
 const mapStateToProps =(state)=>{
     return  {
-        // stepName: this.state.stepName,
-        length: this.state.length,
-        width: this.state.width,
-        height: this.state.height,
-        floorage: this.state.floorage,
-        levelPerfect: this.state.levelPerfect,
+        stepName: state.stepName,
+        length: state.length,
+        width: state.width,
+        height: state.height,
+        floorage: state.floorage,
+        levelPerfect: state.levelPerfect,
     }
 };
 const mapDispatchToProps=(dispatch)=> {

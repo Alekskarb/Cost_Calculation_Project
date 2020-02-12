@@ -2,14 +2,17 @@ import React from 'react';
 import NavigationPanel from "./NavigationPanel";
 import style from '../Navbar/Navigation.module.css'
 import Button from "./Button";
+import {connect} from "react-redux";
+import {pressButtonAC} from "../../redux/reducer";
 
 class Navigation extends React.Component {
 
     state = {
-        numberStep: 1,
-        stepNumber: 'step#1',
-        stepName: 'Add Your Room Data',
         isConditionsTrue: true,
+    };
+
+    componentDidMount() {
+        return this.state
     };
 
     buttonNext = () => {
@@ -38,7 +41,7 @@ class Navigation extends React.Component {
                         numberStep: number,
                         stepNumber: `step#${number}`,
                         stepName: 'Add Your Room Data'
-                    }
+                    }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
                 );
                 break;
             case 2:
@@ -86,4 +89,19 @@ class Navigation extends React.Component {
     }
 }
 
-export default Navigation;
+const mapStateToProps=(state)=> {
+    return {
+        numberStep: state.numberStep,
+        stepNumber: state.stepNumber,
+        stepName: state.stepName,
+    }
+};
+const mapDispatchToProps =(dispatch)=> {
+    return {
+        pressButton: (num, step, name)=> {
+            dispatch(pressButtonAC(num, step, name))
+        }
+    }
+}
+export const NavigationContainer=connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default NavigationContainer;
