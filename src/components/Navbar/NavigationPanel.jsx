@@ -9,7 +9,6 @@ class NavigationPanel extends React.Component {
     }
 
     render() {
-debugger
         return <div className={`${style.item} ${style.active}`}>
 
             <NavLink to={`/${this.props.stepNumber}`} activeClassName={style.active} >

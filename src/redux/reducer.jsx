@@ -3,7 +3,7 @@ const SET_NAVIGATION = 'SET_NAVIGATION';
 
 let initialState = {
     numberStep: 1,
-    stepNumber: 'step#1',
+    stepNumber: 'step1',
     stepName: ['',
         'Add Your Room Data',
         'Add finishings works',
@@ -27,7 +27,7 @@ export const reducer = (state = initialState, action) => {
             };
         case SET_NAVIGATION:
             return {
-                ...state, numberStep: action.num, stepNumber: `step#${action.num}`,
+                ...state, numberStep: action.num, stepNumber: `step${action.num}`,
                 steps: state.stepName[action.num].toString(
                     // find(el,i, stepName)=> el[i] === el[action.num]
                 )

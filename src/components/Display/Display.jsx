@@ -9,12 +9,12 @@ import {Route} from "react-router-dom";
 
 function Display() {
     return <div className={style.display}>
-        <Route path='/step#1' render={()=> <StartDataDisplay/>}
+        <Route path='/step1' render={()=> <StartDataDisplay/>}
                // component={StartDataDisplay}
         />
-        <Route path='/step#2' component={FinishingWorksDisplay}/>
-        <Route path='/step#3' component={AdditionalWorksDisplay}/>
-        <Route path='/step#4' component={CalculationDisplay}/>
+        <Route path='/step2' component={FinishingWorksDisplay}/>
+        <Route path='/step3' component={AdditionalWorksDisplay}/>
+        <Route path='/step4' component={CalculationDisplay}/>
     </div>
 }
 
