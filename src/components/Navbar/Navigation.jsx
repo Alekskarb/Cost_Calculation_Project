@@ -8,25 +8,25 @@ import {pressButtonAC} from "../../redux/reducer";
 class Navigation extends React.Component {
 
     state = {
+        numberStep: 1,
+        stepNumber: '',
+        stepName: 'Add Your Room Data',
         isConditionsTrue: true,
     };
 
-    componentDidMount() {
-        return this.state
-    };
-
     buttonNext = () => {
-        if (this.state.isConditionsTrue && this.state.numberStep <= 3) {
+        if (this.state.isConditionsTrue && this.props.numberStep <= 3) {
             this.setState({
-                    numberStep: this.state.numberStep + 1,
+                    numberStep: this.props.numberStep + 1,
                 }, () => {
-                    this.pressButton(this.state.numberStep)
+                    this.pressButton(this.props.numberStep)
                 }
             )
         }
     };
 
     buttonBack = () => {
+
         if (this.state.isConditionsTrue && this.state.numberStep > 1) {
             this.setState({
                 numberStep: this.state.numberStep - 1,
@@ -34,43 +34,50 @@ class Navigation extends React.Component {
         }
     };
 
-    pressButton = (number) => {
-        switch (number) {
-            case 1:
-                this.setState({
-                        numberStep: number,
-                        stepNumber: `step#${number}`,
-                        stepName: 'Add Your Room Data'
-                    }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
-                );
-                break;
-            case 2:
-                this.setState({
-                        numberStep: number,
-                        stepNumber: `step#${number}`,
-                        stepName: 'Add finishings works'
-                    },
-                );
-                break;
-            case 3:
-                this.setState({
-                        numberStep: number,
-                        stepNumber: `step#${number}`,
-                        stepName: 'Select additional works'
-                    }
-                );
-                break;
-            case 4:
-                this.setState({
-                        numberStep: number,
-                        stepNumber: `step#${number}`,
-                        stepName: 'The cost of work'
-                    }
-                );
-                break;
-            default:
-                return this.state;
-        }
+    // pressButton = (number) => {
+    //
+    //     switch (number) {
+    //         case 1:
+    //             this.setState({
+    //                     numberStep: number,
+    //                     stepNumber: `step#${number}`,
+    //                     stepName: 'Add Your Room Data'
+    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
+    //             );
+    //             break;
+    //         case 2:
+    //
+    //             this.setState({
+    //                     numberStep: number,
+    //                     stepNumber: `step#${number}`,
+    //                     stepName: 'Add finishings works'
+    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
+    //             );
+    //             break;
+    //         case 3:
+    //             debugger
+    //             this.setState({
+    //                     numberStep: number,
+    //                     stepNumber: `step#${number}`,
+    //                     stepName: 'Select additional works'
+    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
+    //             );
+    //             break;
+    //         case 4:
+    //             this.setState({
+    //                     numberStep: number,
+    //                     stepNumber: `step#${number}`,
+    //                     stepName: 'The cost of work'
+    //                 }, ()=>this.props.pressButton(this.state.numberStep, this.state.stepNumber, this.state.stepName )
+    //             );
+    //             break;
+    //         default:
+    //             return this.state;
+    //     }
+    // };
+
+    componentDidMount() {
+        return this.props.state
     };
 
     render() {
@@ -83,7 +90,7 @@ class Navigation extends React.Component {
                 <Button title={'Next'} setData={this.buttonNext}/>
 
                 {/*<ButtonAdvice/>*/}
-                <Button title={'Advice'} setData={this.buttonBack}/>
+                <Button title={'Advice'} setData={this.buttonAdvice}/>
             </div>
         </div>
     }
