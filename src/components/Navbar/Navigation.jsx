@@ -12,6 +12,21 @@ class Navigation extends React.Component {
         isConditionsTrue: true,
     };
 
+    saveState= ()=>{
+        let string = JSON.stringify(this.state);
+        localStorage.setItem('calcState', string)
+    };
+    restoreState= ()=>{
+        let  state = {
+            numberStep: 1,
+            isConditionsTrue: true,
+        };
+    };
+
+    componentDidMount() {
+        return this.restoreState()
+    };
+
     buttonNext = () => {
         if (this.state.isConditionsTrue && this.props.numberStep <= 3) {
             this.setState({
@@ -32,9 +47,13 @@ class Navigation extends React.Component {
         }
     };
 
-            // componentDidMount() {
-            //     return this.props.state
-            // };
+    pressButton=(num)=> {
+        switch (num) {
+            case 1:
+                return {}
+        }
+
+    }
 
     render() {
         return <div className={style.navigation}>
