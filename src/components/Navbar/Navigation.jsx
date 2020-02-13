@@ -32,9 +32,9 @@ class Navigation extends React.Component {
         }
     };
 
-    componentDidMount() {
-        return this.props.state
-    };
+            // componentDidMount() {
+            //     return this.props.state
+            // };
 
     render() {
         return <div className={style.navigation}>

@@ -4,10 +4,6 @@ import {NavLink} from "react-router-dom";
 
 class NavigationPanel extends React.Component {
 
-    componentDidMount() {
-        return this.props.state
-    }
-
     render() {
         return <div className={`${style.item} ${style.active}`}>
 

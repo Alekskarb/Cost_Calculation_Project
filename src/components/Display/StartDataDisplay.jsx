@@ -1,12 +1,11 @@
 import React from 'react';
 import style from '../Display/Display.module.css'
 import {connect} from "react-redux";
-import {lengthValueAC} from "../../redux/reducer";
+import {floorageValueAC, heightValueAC, lengthValueAC, levelValueAC, widthValueAC} from "../../redux/reducer";
 
 class StartDataDisplay extends React.Component {
 
     constructor(props) {
-        debugger
         super(props);
     }
 
@@ -43,7 +42,7 @@ class StartDataDisplay extends React.Component {
 
     render() {
         return <>
-            <h3 className={style.text}>Please, select a type of finishing & {this.props.stepName} </h3>
+            <h3 className={style.text}>Please, {this.props.steps} </h3>
             <div className={'startData'}>
                 <div>
                     <select onChange={this.levelValue}>
@@ -74,7 +73,7 @@ class StartDataDisplay extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        stepName: state.stepName,
+        steps: state.steps,
         length: state.length,
         width: state.width,
         height: state.height,
@@ -86,7 +85,19 @@ const mapDispatchToProps = (dispatch) => {
     return {
         lengthValue: (value) => {
             dispatch(lengthValueAC(value))
-        }
+        },
+        widthValue: (value) => {
+            dispatch(widthValueAC(value))
+        },
+        floorageValue: (value) => {
+            dispatch(floorageValueAC(value))
+        },
+        heightValue: (value) => {
+            dispatch(heightValueAC(value))
+        },
+        levelValue: (value) => {
+            dispatch(levelValueAC(value))
+        },
     }
 }
 
