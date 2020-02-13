@@ -46,10 +46,10 @@ class Navigation extends React.Component {
                     stepNumber={this.props.stepNumber}
                     steps={this.props.steps}
                 />
-                <Button title={'Next'} setData={this.buttonNext}/>
+                <Button title={'Next'} setData={this.buttonNext} disabledButton={!this.state.isConditionsTrue}/>
 
                 {/*<ButtonAdvice/>*/}
-                <Button title={'Advice'} setData={this.buttonAdvice}/>
+                <Button title={'Advice'} setData={this.buttonAdvice} />
             </div>
         </div>
     }
