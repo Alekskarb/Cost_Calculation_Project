@@ -1,20 +1,16 @@
 import React from 'react';
-import '../../App.css';
+import style from './Display.module.css'
 
 class FinishingWorksDisplay extends React.Component {
 
     constructor(props) {
-        debugger
         super(props);
     }
 
     render() {
         return <div className={'finishingWorks'}>
-            <div>
-                <h1>111111111</h1>
-
-
-
+            <div className={style.text}>
+                <h1>22222</h1>
             </div>
         </div>
     }

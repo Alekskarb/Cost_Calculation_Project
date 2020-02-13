@@ -4,7 +4,7 @@ import StartDataDisplay from "./StartDataDisplay";
 import FinishingWorksDisplay from "./FinishingWorksDisplay";
 import AdditionalWorksDisplay from "./AdditionalWorksDisplay";
 import CalculationDisplay from "./CalculationDisplay";
-import style from '../Display/Display.module.css'
+import style from './Display.module.css'
 import {Route} from "react-router-dom";
 
 function Display() {
