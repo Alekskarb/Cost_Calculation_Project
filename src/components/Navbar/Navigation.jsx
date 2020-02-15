@@ -36,15 +36,12 @@ class Navigation extends React.Component {
             <div className={style.container}>
 
                 <Button title={'Back'} setData={this.buttonBack}/>
-                {/*<Navbar/>*/}
                 <NavigationPanel
                     numberStep={this.props.numberStep}
                     stepNumber={this.props.stepNumber}
                     steps={this.props.steps}
                 />
                 <Button title={'Next'} setData={this.buttonNext} disabledButton={!this.state.isConditionsTrue}/>
-
-                {/*<ButtonAdvice/>*/}
                 <Button title={'Advice'} setData={this.buttonAdvice}/>
             </div>
         </div>

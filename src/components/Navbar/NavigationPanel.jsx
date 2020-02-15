@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../Navbar/Navigation.module.css'
-import {NavLink, Redirect} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 import Navbar from "./Navbar";
 
 class NavigationPanel extends React.Component {
