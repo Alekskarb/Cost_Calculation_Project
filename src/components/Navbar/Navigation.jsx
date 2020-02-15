@@ -36,6 +36,7 @@ class Navigation extends React.Component {
             <div className={style.container}>
 
                 <Button title={'Back'} setData={this.buttonBack}/>
+                {/*<Navbar/>*/}
                 <NavigationPanel
                     numberStep={this.props.numberStep}
                     stepNumber={this.props.stepNumber}

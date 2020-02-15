@@ -1,6 +1,7 @@
 import React from 'react';
 import style from '../Navbar/Navigation.module.css'
 import {NavLink, Redirect} from "react-router-dom";
+import Navbar from "./Navbar";
 
 class NavigationPanel extends React.Component {
 
@@ -11,9 +12,9 @@ class NavigationPanel extends React.Component {
                 return (
                     <div className={`${style.item} ${style.active}`}>
                         <Redirect to={'/step1'}/>
-                        <NavLink to={`/${this.props.stepNumber}`} activeClassName={style.active}>
-                            {`step ${this.props.numberStep}: ${this.props.steps}`}
-                        </NavLink>
+                        <Navbar  numberStep={this.props.numberStep}
+                                 stepNumber={this.props.stepNumber}
+                                 steps={this.props.steps}/>
                     </div>)
 
             }
@@ -21,33 +22,34 @@ class NavigationPanel extends React.Component {
                 return (
                     <div className={`${style.item} ${style.active}`}>
                         <Redirect to={'/step2'}/>
-                        <NavLink to={`/${this.props.stepNumber}`} activeClassName={style.active}>
-                            {`step ${this.props.numberStep}: ${this.props.steps}`}
-                        </NavLink>
+                        <Navbar  numberStep={this.props.numberStep}
+                                 stepNumber={this.props.stepNumber}
+                                 steps={this.props.steps}/>
                     </div>)
             }
             case 3: {
                 return (
                     <div className={`${style.item} ${style.active}`}>
                         <Redirect to={'/step3'}/>
-                        <NavLink to={`/${this.props.stepNumber}`} activeClassName={style.active}>
-                            {`step ${this.props.numberStep}: ${this.props.steps}`}
-                        </NavLink>
+                        <Navbar  numberStep={this.props.numberStep}
+                                 stepNumber={this.props.stepNumber}
+                                 steps={this.props.steps}/>
                     </div>)
             }
             case 4: {
                 return (
                     <div className={`${style.item} ${style.active}`}>
                         <Redirect to={'/step4'}/>
-                        <NavLink to={`/${this.props.stepNumber}`} activeClassName={style.active}>
-                            {`step ${this.props.numberStep}: ${this.props.steps}`}
-                        </NavLink>
+                        <Navbar  numberStep={this.props.numberStep}
+                                 stepNumber={this.props.stepNumber}
+                                 steps={this.props.steps}/>
                     </div>)
             }
-            default:
-                return <Redirect to={'/step3'}/>
+            default: return <Redirect to={'/step1'}/>
         }
     }
+    return
+
 }
 
 export default NavigationPanel;

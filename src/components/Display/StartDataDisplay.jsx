@@ -23,7 +23,10 @@ class StartDataDisplay extends React.Component {
             numberStep: 1,
             isDataRight: true,
         };
-
+let toObject = localStorage.getItem('calcState');
+if (state !== null) {
+    state =JSON.parse(toObject)
+}
     };
 
     componentDidMount() {
@@ -52,16 +55,16 @@ class StartDataDisplay extends React.Component {
     };
     levelValue = (e) => {
         let level = +e.currentTarget.value;
-        this.setState({levelPerfect: level}, () => this.saveState());
+        this.setState({coefficient: level}, () => this.saveState());
         this.props.levelValue(level)
     };
 
     render() {
         return <>
-            <h3 className={style.text}>Please, {this.props.steps} </h3>
+            <div className={style.text}> {this.props.steps} </div>
             <div className={'startData'}>
                 <div>
-                    <select onChange={this.levelValue}>
+                    <select onChange={this.levelValue} required={true}>
                         <option value={null}>Please, select</option>
                         <option value={1}>standard</option>
                         <option value={2}>premium</option>

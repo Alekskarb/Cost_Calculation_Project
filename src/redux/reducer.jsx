@@ -20,7 +20,7 @@ let initialState = {
     width: 1,
     height: 2.4,
     floorage: '',
-    levelPerfect: 0,
+    coefficient: 0,
 };
 
 export const reducer = (state = initialState, action) => {
