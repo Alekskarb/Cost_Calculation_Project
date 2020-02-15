@@ -12,21 +12,6 @@ class Navigation extends React.Component {
         isConditionsTrue: true,
     };
 
-    saveState= ()=>{
-        let string = JSON.stringify(this.state);
-        localStorage.setItem('calcState', string)
-    };
-    restoreState= ()=>{
-        let  state = {
-            numberStep: 1,
-            isConditionsTrue: true,
-        };
-    };
-
-    componentDidMount() {
-        return this.restoreState()
-    };
-
     buttonNext = () => {
         if (this.state.isConditionsTrue && this.props.numberStep <= 3) {
             this.setState({
@@ -39,21 +24,12 @@ class Navigation extends React.Component {
     };
 
     buttonBack = () => {
-
         if (this.state.isConditionsTrue && this.state.numberStep > 1) {
             this.setState({
                 numberStep: this.state.numberStep - 1,
-            },()=> this.props.pressButton(this.state.numberStep))
+            }, () => this.props.pressButton(this.state.numberStep))
         }
     };
-
-    pressButton=(num)=> {
-        switch (num) {
-            case 1:
-                return {}
-        }
-
-    }
 
     render() {
         return <div className={style.navigation}>
@@ -68,25 +44,25 @@ class Navigation extends React.Component {
                 <Button title={'Next'} setData={this.buttonNext} disabledButton={!this.state.isConditionsTrue}/>
 
                 {/*<ButtonAdvice/>*/}
-                <Button title={'Advice'} setData={this.buttonAdvice} />
+                <Button title={'Advice'} setData={this.buttonAdvice}/>
             </div>
         </div>
     }
 }
 
-const mapStateToProps=(state)=> {
+const mapStateToProps = (state) => {
     return {
         numberStep: state.numberStep,
         stepNumber: state.stepNumber,
         steps: state.steps,
     }
 };
-const mapDispatchToProps =(dispatch)=> {
+const mapDispatchToProps = (dispatch) => {
     return {
-        pressButton: (num)=> {
+        pressButton: (num) => {
             dispatch(pressButtonAC(num))
         }
     }
 }
-export const NavigationContainer=connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export const NavigationContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation);
 export default NavigationContainer;

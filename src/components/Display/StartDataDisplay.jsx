@@ -10,33 +10,49 @@ class StartDataDisplay extends React.Component {
     }
 
     state = {
-        isDataWright: true
+        isDataRight: true
     };
 
+    saveState = () => {
+        let string = JSON.stringify(this.state);
+        localStorage.setItem('calcState', string)
+    };
+
+    restoreState = () => {
+        let state = {
+            numberStep: 1,
+            isDataRight: true,
+        };
+
+    };
+
+    componentDidMount() {
+        return this.restoreState()
+    };
 
     lengthValue = (e) => {
         let value = +e.currentTarget.value;
-        this.setState({length: value});
+        this.setState({length: value}, () => this.saveState());
         this.props.lengthValue(value)
     }
     widthValue = (e) => {
         let value = +e.currentTarget.value;
-        this.setState({width: value});
+        this.setState({width: value}, () => this.saveState());
         this.props.widthValue(value)
     };
     floorageValue = (e) => {
         let square = +e.currentTarget.value;
-        this.setState({width: square});
+        this.setState({width: square}, () => this.saveState());
         this.props.widthValue(square)
     };
     heightValue = (e) => {
         let value = +e.currentTarget.value;
-        this.setState({height: value});
+        this.setState({height: value}, () => this.saveState());
         this.props.heightValue(value)
     };
     levelValue = (e) => {
         let level = +e.currentTarget.value;
-        this.setState({levelPerfect: level});
+        this.setState({levelPerfect: level}, () => this.saveState());
         this.props.levelValue(level)
     };
 

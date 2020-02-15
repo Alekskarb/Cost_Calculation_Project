@@ -9,7 +9,7 @@ class FinishingWorksDisplay extends React.Component {
 
     render() {
         return <div className={'finishingWorks'}>
-            <div onClick={''}  className={style.text}>
+            <div className={style.text}>
                 <h1>22222</h1>
             </div>
         </div>
