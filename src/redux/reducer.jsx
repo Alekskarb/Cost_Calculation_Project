@@ -16,11 +16,11 @@ let initialState = {
     ],
     steps: 'Add Your Room Data',
     isConditionsTrue: true,
-    length: 1,
-    width: 1,
-    height: 2.4,
-    floorage: '',
-    coefficient: 0,
+    length: '',
+    width: '',
+    height: '',
+    square: '',
+    coefficient: '',
 };
 
 export const reducer = (state = initialState, action) => {
@@ -38,19 +38,20 @@ export const reducer = (state = initialState, action) => {
                 ...state, height: action.value
             };
         case SET_FLOORAGE_VALUE:
+            debugger
             return {
-                ...state, floorage: action.value
+                ...state, square: action.value
             };
         case SET_LEVEL_VALUE:
             return {
-                ...state, levelPerfect: action.value
+                ...state, coefficient: action.value
             };
         case SET_NAVIGATION:
             return {
                 ...state, numberStep: action.num, stepNumber: `step${action.num}`,
-                steps: state.stepName[action.num].toString(
+                steps: state.stepName[action.num].toString()
                     // find(el,i, stepName)=> el[i] === el[action.num]
-                )
+
             }
     }
     return state
@@ -59,7 +60,7 @@ export const reducer = (state = initialState, action) => {
 export const lengthValueAC = (value) => ({type: SET_LENGTH_VALUE, value});
 export const widthValueAC = (value) => ({type: SET_WIDTH_VALUE, value});
 export const heightValueAC = (value) => ({type: SET_HEIGHT_VALUE, value});
-export const floorageValueAC = (value) => ({type: SET_FLOORAGE_VALUE, value});
+export const squareValueAC = (value) => ({type: SET_FLOORAGE_VALUE, value});
 export const levelValueAC = (value) => ({type: SET_LEVEL_VALUE, value});
 export const pressButtonAC = (num) => ({type: SET_NAVIGATION, num});
 

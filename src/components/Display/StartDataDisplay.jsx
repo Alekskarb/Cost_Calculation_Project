@@ -1,7 +1,7 @@
 import React from 'react';
 import style from '../Display/Display.module.css'
 import {connect} from "react-redux";
-import {floorageValueAC, heightValueAC, lengthValueAC, levelValueAC, widthValueAC} from "../../redux/reducer";
+import {squareValueAC, heightValueAC, lengthValueAC, levelValueAC, widthValueAC} from "../../redux/reducer";
 
 class StartDataDisplay extends React.Component {
 
@@ -23,10 +23,10 @@ class StartDataDisplay extends React.Component {
             numberStep: 1,
             isDataRight: true,
         };
-let toObject = localStorage.getItem('calcState');
-if (state !== null) {
-    state =JSON.parse(toObject)
-}
+        let toObject = localStorage.getItem('calcState');
+        if (state !== null) {
+            state = JSON.parse(toObject)
+        }
     };
 
     componentDidMount() {
@@ -43,10 +43,12 @@ if (state !== null) {
         this.setState({width: value}, () => this.saveState());
         this.props.widthValue(value)
     };
-    floorageValue = (e) => {
-        let square = +e.currentTarget.value;
-        this.setState({width: square}, () => this.saveState());
-        this.props.widthValue(square)
+
+    squareValue = (e) => {
+        debugger
+        let square = this.props.length * this.props.width;
+        this.setState({square: square}, () => this.saveState());
+        this.props.squareValue(square)
     };
     heightValue = (e) => {
         let value = +e.currentTarget.value;
@@ -64,7 +66,7 @@ if (state !== null) {
             <div className={style.text}> {this.props.steps} </div>
             <div className={'startData'}>
                 <div>
-                    <select onChange={this.levelValue} required={true}>
+                    <select onChange={this.levelValue}>
                         <option value={null}>Please, select</option>
                         <option value={1}>standard</option>
                         <option value={2}>premium</option>
@@ -79,11 +81,11 @@ if (state !== null) {
                            onChange={this.lengthValue} step={0.1} min={1.4}
                     />
                     <input type="number" value={this.props.height} placeholder={'height room'}
-                           onChange={this.heightValue} step={0.01} min="1"
+                           onChange={this.heightValue} step={0.01} min="1.6"
                     />
-                    <input type="number" value={this.props.length * this.props.width}
-                           onChange={this.floorageValue} readOnly={true}
-                           placeholder={'floor area'}/>
+                    <input type="number" value={this.props.square} placeholder={'floor area'}
+                           onChange={this.squareValue} readOnly={true}
+                    />
                 </div>
             </div>
         </>
@@ -96,8 +98,8 @@ const mapStateToProps = (state) => {
         length: state.length,
         width: state.width,
         height: state.height,
-        floorage: state.floorage,
-        levelPerfect: state.levelPerfect,
+        square: state.square,
+        coefficient: state.coefficient,
     }
 };
 const mapDispatchToProps = (dispatch) => {
@@ -108,8 +110,8 @@ const mapDispatchToProps = (dispatch) => {
         widthValue: (value) => {
             dispatch(widthValueAC(value))
         },
-        floorageValue: (value) => {
-            dispatch(floorageValueAC(value))
+        squareValue: (value) => {
+            dispatch(squareValueAC(value))
         },
         heightValue: (value) => {
             dispatch(heightValueAC(value))
