@@ -4,7 +4,8 @@ import style from '../Footer/Footer.module.css'
 class CalculationFinishingWorks extends React.Component {
     render() {
         return <div className={style.clickCalc}>
-            <div  className={style.title}> Calculation Finishing Works </div>
+            <button className={style.title} disabled={false}>
+                Calculation Finishing Works </button>
             </div>
     }
 }

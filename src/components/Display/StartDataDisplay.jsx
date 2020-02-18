@@ -13,54 +13,45 @@ class StartDataDisplay extends React.Component {
         isDataRight: true
     };
 
-    saveState = () => {
-        let string = JSON.stringify(this.state);
-        localStorage.setItem('calcState', string)
-    };
-
-    restoreState = () => {
-        let state = {
-            numberStep: 1,
-            isDataRight: true,
-        };
-        let toObject = localStorage.getItem('calcState');
-        if (state !== null) {
-            state = JSON.parse(toObject)
-        }
-    };
-
-    componentDidMount() {
-        return this.restoreState()
-    };
+    // saveState = () => {
+    //     let string = JSON.stringify(this.state);
+    //     localStorage.setItem('calcState', string)
+    // };
+    // restoreState = () => {
+    //     let state = {
+    //         numberStep: 1,
+    //         isDataRight: true,
+    //     };
+    //     let toObject = localStorage.getItem('calcState');
+    //     if (state !== null) {
+    //         state = JSON.parse(toObject)
+    //     }
+    // };
+    // componentDidMount() {
+    //     return this.restoreState()
+    // };
 
     lengthValue = (e) => {
         let value = +e.currentTarget.value;
-        this.setState({length: value}, () => this.saveState());
         this.props.lengthValue(value)
     }
     widthValue = (e) => {
         let value = +e.currentTarget.value;
-        this.setState({width: value}, () => this.saveState());
         this.props.widthValue(value)
     };
     heightValue = (e) => {
         let value = +e.currentTarget.value;
-        this.setState({height: value}, () => this.saveState());
         this.props.heightValue(value)
     };
-    // squareValue = (e) => {
-    //     debugger
-    //     let square = this.props.length * this.props.width;
-    //     this.setState({square: square}, () => this.saveState());
-    //     this.props.squareValue(square)
-    // };
     levelValue = (e) => {
         let level = +e.currentTarget.value;
-        this.setState({coefficient: level}, () => this.saveState());
         this.props.levelValue(level)
     };
 
     render() {
+        let widthError = this.props.inputError ? '': 'error';
+        let lengthError = this.props.inputError ? '': 'error';
+        let heightError = this.props.inputError ? '': 'error';
         return <>
             <div className={style.text}> {this.props.steps} </div>
             <div className={'startData'}>
@@ -74,13 +65,13 @@ class StartDataDisplay extends React.Component {
                 </div>
                 <div>
                     <input type="number" value={this.props.width} placeholder={'width room'}
-                           onChange={this.widthValue} step={0.1} min="1"
+                           onChange={this.widthValue} step={0.1} min="1" className={widthError}
                     />
                     <input type="number" value={this.props.length} placeholder={'length room'} name={'length'}
-                           onChange={this.lengthValue} step={0.1} min={1.4}
+                           onChange={this.lengthValue} step={0.1} min={1.4} className={lengthError}
                     />
                     <input type="number" value={this.props.height} placeholder={'height room'}
-                           onChange={this.heightValue} step={0.01} min="1.6"
+                           onChange={this.heightValue} step={0.01} min="1.6" className={heightError}
                     />
                     <input type="number" value={this.props.square} placeholder={'floor area'}
                            readOnly={true}

@@ -45,7 +45,6 @@ export const reducer = (state = initialState, action) => {
         //         ...state, square: action.value
         //     };
         case SET_LEVEL_VALUE:
-            debugger
             return {
                 ...state, coefficient: action.value
             };
@@ -56,9 +55,9 @@ export const reducer = (state = initialState, action) => {
                 steps: state.stepName[action.num].toString()
                     // find(el,i, stepName)=> el[i] === el[action.num]
 
-            }
+            }; default:
+            return state
     }
-    return state
 };
 
 export const lengthValueAC = (value) => ({type: SET_LENGTH_VALUE, value});

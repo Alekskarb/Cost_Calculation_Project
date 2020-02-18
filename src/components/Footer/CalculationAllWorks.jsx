@@ -9,9 +9,9 @@ class CalculationAllWorks extends React.Component {
     render() {
         return <div className={style.clickCalc}>
             {!this.state.isOrderTake &&
-                <div className={style.title}>
+                <button className={style.title} disabled={false}>
                     Calculation <br/>All Works
-                </div>}
+                </button>}
 
             {this.state.isOrderTake && <OrderCalculation/>
             }

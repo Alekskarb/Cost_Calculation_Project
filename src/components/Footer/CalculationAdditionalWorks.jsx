@@ -4,9 +4,9 @@ import style from '../Footer/Footer.module.css'
 class CalculationAdditionalWorks extends React.Component {
     render() {
         return <div className={style.clickCalc}>
-            <div className={style.title}>
+            <button className={style.title} disabled={false}>
                 Calculation Additional Works
-            </div>
+            </button>
         </div>
     }
 }

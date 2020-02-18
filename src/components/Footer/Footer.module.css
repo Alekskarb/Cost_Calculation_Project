@@ -23,9 +23,9 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    border-radius: 15px;
-    background-color: maroon;
-    border: chocolate 2px solid;
+/*display: none;*/
+    /*background-color: maroon;*/
+    /*border: chocolate 2px solid;*/
 }
 
 .block {
@@ -51,9 +51,10 @@ display: flex;
 .title {
     font-size: 18px;
     margin: 10px;
-    color: lightyellow;
+    color: black;
     /*text-autospace: ideograph-alpha;*/
     align-items: center;
+    border-radius: 15px;
     justify-content: center;
     text-align: center;
 }
