@@ -43,18 +43,17 @@ class StartDataDisplay extends React.Component {
         this.setState({width: value}, () => this.saveState());
         this.props.widthValue(value)
     };
-
-    squareValue = (e) => {
-        debugger
-        let square = this.props.length * this.props.width;
-        this.setState({square: square}, () => this.saveState());
-        this.props.squareValue(square)
-    };
     heightValue = (e) => {
         let value = +e.currentTarget.value;
         this.setState({height: value}, () => this.saveState());
         this.props.heightValue(value)
     };
+    // squareValue = (e) => {
+    //     debugger
+    //     let square = this.props.length * this.props.width;
+    //     this.setState({square: square}, () => this.saveState());
+    //     this.props.squareValue(square)
+    // };
     levelValue = (e) => {
         let level = +e.currentTarget.value;
         this.setState({coefficient: level}, () => this.saveState());
@@ -84,7 +83,7 @@ class StartDataDisplay extends React.Component {
                            onChange={this.heightValue} step={0.01} min="1.6"
                     />
                     <input type="number" value={this.props.square} placeholder={'floor area'}
-                           onChange={this.squareValue} readOnly={true}
+                           readOnly={true}
                     />
                 </div>
             </div>

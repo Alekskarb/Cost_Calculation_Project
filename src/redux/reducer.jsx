@@ -27,26 +27,30 @@ export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_LENGTH_VALUE:
             return {
-                ...state, length: action.value
+                ...state, length: action.value,
+                square: state.width && action.value* state.width
             };
         case SET_WIDTH_VALUE:
             return {
-                ...state, width: action.value
+                ...state, width: action.value,
+                square: state.length && action.value* state.length
             };
         case SET_HEIGHT_VALUE:
             return {
                 ...state, height: action.value
             };
-        case SET_FLOORAGE_VALUE:
-            debugger
-            return {
-                ...state, square: action.value
-            };
+        // case SET_FLOORAGE_VALUE:
+        //     debugger
+        //     return {
+        //         ...state, square: action.value
+        //     };
         case SET_LEVEL_VALUE:
+            debugger
             return {
                 ...state, coefficient: action.value
             };
         case SET_NAVIGATION:
+            debugger
             return {
                 ...state, numberStep: action.num, stepNumber: `step${action.num}`,
                 steps: state.stepName[action.num].toString()
