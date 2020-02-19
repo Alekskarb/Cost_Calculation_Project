@@ -35,14 +35,7 @@
     justify-content: space-evenly;
 }
 .displayError {
-    height: 80px;
-    width: 80px;
-    font-weight: bold;
     color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24pt;
 }
 .title {
     font-size: 28px;

@@ -1,7 +1,14 @@
 import React from 'react';
-import style from '../Display/Display.module.css'
+import style from './StartDataDisplay.module.css'
 import {connect} from "react-redux";
-import {squareValueAC, heightValueAC, lengthValueAC, levelValueAC, widthValueAC} from "../../redux/reducer";
+import {
+    squareValueAC,
+    heightValueAC,
+    lengthValueAC,
+    levelValueAC,
+    widthValueAC,
+    inputErrorAC
+} from "../../redux/reducer";
 
 class StartDataDisplay extends React.Component {
 
@@ -10,7 +17,8 @@ class StartDataDisplay extends React.Component {
     }
 
     state = {
-        isDataRight: true
+        isDataRight: true,
+        inputError: true,
     };
 
     // saveState = () => {
@@ -47,11 +55,15 @@ class StartDataDisplay extends React.Component {
         let level = +e.currentTarget.value;
         this.props.levelValue(level)
     };
+    inputError = () => {
+        this.props.inputError();
+    };
+    widthError = this.props.inputError ? `${style.error}` : '';
+    // lengthError = this.props.inputError ? 'error' : '';
+    // heightError = this.props.inputError ? 'error' : '';
 
     render() {
-        let widthError = this.props.inputError ? '': 'error';
-        let lengthError = this.props.inputError ? '': 'error';
-        let heightError = this.props.inputError ? '': 'error';
+
         return <>
             <div className={style.text}> {this.props.steps} </div>
             <div className={'startData'}>
@@ -65,13 +77,16 @@ class StartDataDisplay extends React.Component {
                 </div>
                 <div>
                     <input type="number" value={this.props.width} placeholder={'width room'}
-                           onChange={this.widthValue} step={0.1} min="1" className={widthError}
+                           onChange={this.widthValue} step={0.1} className={this.widthError}
+                        // className={`${style.this.widthError}`}
                     />
                     <input type="number" value={this.props.length} placeholder={'length room'} name={'length'}
-                           onChange={this.lengthValue} step={0.1} min={1.4} className={lengthError}
+                           onChange={this.lengthValue} step={0.1} min={1.4} className={this.widthError}
+                         // className={lengthError}
                     />
                     <input type="number" value={this.props.height} placeholder={'height room'}
-                           onChange={this.heightValue} step={0.01} min="1.6" className={heightError}
+                           onChange={this.heightValue} step={0.01} min="1.6"
+                        // className={heightError}
                     />
                     <input type="number" value={this.props.square} placeholder={'floor area'}
                            readOnly={true}
@@ -90,6 +105,7 @@ const mapStateToProps = (state) => {
         height: state.height,
         square: state.square,
         coefficient: state.coefficient,
+        inputError: state.inputError,
     }
 };
 const mapDispatchToProps = (dispatch) => {
@@ -109,6 +125,9 @@ const mapDispatchToProps = (dispatch) => {
         levelValue: (value) => {
             dispatch(levelValueAC(value))
         },
+        inputError: (boolean) => {
+            dispatch(inputErrorAC(boolean))
+        }
     }
 }
 

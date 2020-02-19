@@ -4,6 +4,7 @@ const SET_HEIGHT_VALUE = 'SET_HEIGHT_VALUE';
 const SET_FLOORAGE_VALUE = 'SET_FLOORAGE_VALUE';
 const SET_LEVEL_VALUE = 'SET_LEVEL_VALUE';
 const SET_NAVIGATION = 'SET_NAVIGATION';
+const SET_ERROR = 'SET_ERROR';
 
 let initialState = {
     numberStep: 1,
@@ -16,6 +17,7 @@ let initialState = {
     ],
     steps: 'Add Your Room Data',
     isConditionsTrue: true,
+    inputError: true,
     length: '',
     width: '',
     height: '',
@@ -39,17 +41,17 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state, height: action.value
             };
-        // case SET_FLOORAGE_VALUE:
-        //     debugger
-        //     return {
-        //         ...state, square: action.value
-        //     };
         case SET_LEVEL_VALUE:
             return {
                 ...state, coefficient: action.value
             };
+            case SET_ERROR:
+                if (state.lengthValue <=0 ||state.widthValue <=0 || state.heightValue <=0){
+                 return {...state, inputError: true}
+            } else {return {...state, inputError: false}
+                }
+
         case SET_NAVIGATION:
-            debugger
             return {
                 ...state, numberStep: action.num, stepNumber: `step${action.num}`,
                 steps: state.stepName[action.num].toString()
@@ -66,4 +68,5 @@ export const heightValueAC = (value) => ({type: SET_HEIGHT_VALUE, value});
 export const squareValueAC = (value) => ({type: SET_FLOORAGE_VALUE, value});
 export const levelValueAC = (value) => ({type: SET_LEVEL_VALUE, value});
 export const pressButtonAC = (num) => ({type: SET_NAVIGATION, num});
+export const inputErrorAC = (flag) => ({type: SET_ERROR, flag});
 
