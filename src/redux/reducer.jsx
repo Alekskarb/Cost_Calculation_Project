@@ -19,9 +19,9 @@ let initialState = {
     widthError: false,
     lengthError: false,
     heightError: false,
-    length: '',
-    width: '',
-    height: '',
+    length: '1',
+    width: '1',
+    height: '1',
     square: '',
     coefficient: '',
 };
@@ -29,7 +29,7 @@ let initialState = {
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_LENGTH_VALUE:
-            if (action.length <= 0) {
+            if (state.length <= 0) {
                 return {...state, lengthError: true}
             } else {
                 return {
@@ -38,7 +38,7 @@ export const reducer = (state = initialState, action) => {
                 }
             }
         case SET_WIDTH_VALUE:
-            if (action.width <= 0) {
+            if (state.width <= 0) {
                 return {...state, widthError: true}
             } else {
                 return {
@@ -47,7 +47,7 @@ export const reducer = (state = initialState, action) => {
                 }
             }
         case SET_HEIGHT_VALUE:
-            if (action.height <= 0) {
+            if (state.height <= 0) {
                 return {...state, heightError: true}
             } else {
                 return {
@@ -58,12 +58,12 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state, coefficient: action.value
             };
-        case SET_ERROR:
-            if (state.length <= 0 || state.width <= 0 || state.height <= 0) {
-                return {...state, inputError: true}
-            } else {
-                return {...state, inputError: false}
-            }
+        // case SET_ERROR:
+        //     if (state.length <= 0 || state.width <= 0 || state.height <= 0) {
+        //         return {...state, inputError: true}
+        //     } else {
+        //         return {...state, inputError: false}
+        //     }
         case SET_NAVIGATION:
             return {
                 ...state, numberStep: action.num, stepNumber: `step${action.num}`,
