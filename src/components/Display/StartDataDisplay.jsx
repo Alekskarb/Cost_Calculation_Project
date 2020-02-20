@@ -1,48 +1,41 @@
 import React from 'react';
-import style from './StartDataDisplay.module.css'
+// import style from './StartDataDisplay.module.css'
+import style from "./Display.module.css";
 import {connect} from "react-redux";
-import {
-    squareValueAC,
-    heightValueAC,
-    lengthValueAC,
-    levelValueAC,
-    widthValueAC,
-    inputErrorAC
-} from "../../redux/reducer";
+import {heightValueAC, inputErrorAC, lengthValueAC, levelValueAC, widthValueAC} from "../../redux/reducer";
 
 class StartDataDisplay extends React.Component {
-
     constructor(props) {
         super(props);
     }
 
     state = {
         isDataRight: true,
-        inputError: true,
+        // inputError: true,
     };
 
-    // saveState = () => {
-    //     let string = JSON.stringify(this.state);
-    //     localStorage.setItem('calcState', string)
-    // };
-    // restoreState = () => {
-    //     let state = {
-    //         numberStep: 1,
-    //         isDataRight: true,
-    //     };
-    //     let toObject = localStorage.getItem('calcState');
-    //     if (state !== null) {
-    //         state = JSON.parse(toObject)
-    //     }
-    // };
-    // componentDidMount() {
-    //     return this.restoreState()
-    // };
+    saveState = () => {
+        let string = JSON.stringify(this.state);
+        localStorage.setItem('calcState', string)
+    };
+    restoreState = () => {
+        let state = {
+            numberStep: 1,
+            isDataRight: true,
+        };
+        let toObject = localStorage.getItem('calcState');
+        if (state !== null) {
+            state = JSON.parse(toObject)
+        }
+    };
+    componentDidMount() {
+        return this.restoreState()
+    };
 
     lengthValue = (e) => {
         let value = +e.currentTarget.value;
         this.props.lengthValue(value)
-    }
+    };
     widthValue = (e) => {
         let value = +e.currentTarget.value;
         this.props.widthValue(value)
@@ -55,15 +48,11 @@ class StartDataDisplay extends React.Component {
         let level = +e.currentTarget.value;
         this.props.levelValue(level)
     };
-    inputError = () => {
-        this.props.inputError();
-    };
-    widthError = this.props.inputError ? `${style.error}` : '';
-    // lengthError = this.props.inputError ? 'error' : '';
-    // heightError = this.props.inputError ? 'error' : '';
 
     render() {
-
+        let widthError = this.props.widthError ? `${style.error}` : '';
+        let lengthError = this.props.lengthError ? `${style.error}` : '';
+        let heightError = this.props.heightError ? `${style.error}` : '';
         return <>
             <div className={style.text}> {this.props.steps} </div>
             <div className={'startData'}>
@@ -77,16 +66,13 @@ class StartDataDisplay extends React.Component {
                 </div>
                 <div>
                     <input type="number" value={this.props.width} placeholder={'width room'}
-                           onChange={this.widthValue} step={0.1} className={this.widthError}
-                        // className={`${style.this.widthError}`}
+                           onChange={this.widthValue} step={0.1} className={widthError}
                     />
                     <input type="number" value={this.props.length} placeholder={'length room'} name={'length'}
-                           onChange={this.lengthValue} step={0.1} min={1.4} className={this.widthError}
-                         // className={lengthError}
+                           onChange={this.lengthValue} step={0.1}  className={lengthError}
                     />
                     <input type="number" value={this.props.height} placeholder={'height room'}
-                           onChange={this.heightValue} step={0.01} min="1.6"
-                        // className={heightError}
+                           onChange={this.heightValue} step={0.01}  className={heightError}
                     />
                     <input type="number" value={this.props.square} placeholder={'floor area'}
                            readOnly={true}
@@ -105,7 +91,9 @@ const mapStateToProps = (state) => {
         height: state.height,
         square: state.square,
         coefficient: state.coefficient,
-        inputError: state.inputError,
+        widthError: state.widthError,
+        lengthError: state.lengthError,
+        heightError: state.heightError,
     }
 };
 const mapDispatchToProps = (dispatch) => {
@@ -116,20 +104,14 @@ const mapDispatchToProps = (dispatch) => {
         widthValue: (value) => {
             dispatch(widthValueAC(value))
         },
-        squareValue: (value) => {
-            dispatch(squareValueAC(value))
-        },
         heightValue: (value) => {
             dispatch(heightValueAC(value))
         },
         levelValue: (value) => {
             dispatch(levelValueAC(value))
         },
-        inputError: (boolean) => {
-            dispatch(inputErrorAC(boolean))
-        }
     }
-}
+};
 
 export const StartDataDisplayContainer = connect(mapStateToProps, mapDispatchToProps)(StartDataDisplay);
 export default StartDataDisplayContainer;

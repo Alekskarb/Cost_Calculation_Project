@@ -34,9 +34,11 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.displayError {
-    color: red;
+
+.error {
+    border: 2px solid red;
 }
+
 .title {
     font-size: 28px;
     margin: 10px;
