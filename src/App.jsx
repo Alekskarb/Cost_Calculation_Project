@@ -4,19 +4,16 @@ import Footer from "./components/Footer/Footer";
 import Display from "./components/Display/Display";
 import Navigation from "./components/Navbar/Navigation";
 
-class App extends React.Component {
+function App() {
+    return <div className={'app-wrapper'}>
+        <div className={'wrapper'}>
 
-    render() {
-        return <div className={'app-wrapper'}>
-            <div className={'wrapper'}>
+            <Navigation/>
+            <Display/>
+            <Footer/>
 
-                <Navigation/>
-                <Display/>
-                <Footer/>
-
-            </div>
         </div>
-    }
+    </div>
 }
 
 export default App;

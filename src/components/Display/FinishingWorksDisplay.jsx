@@ -3,10 +3,6 @@ import style from './Display.module.css'
 
 class FinishingWorksDisplay extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <div className={'finishingWorks'}>
             <div className={style.text}>
